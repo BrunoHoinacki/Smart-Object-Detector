@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThingsFinder</title>
+    <!-- Link do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+    <header class="bg-blue-800 text-white p-4 text-center flex items-center justify-between">
+        <div class="flex flex-col items-center">
+            <h1 class="text-3xl font-bold">ThingsFinder</h1>
+            <span class="text-sm mt-1">Descubra objetos em tempo real</span>
+        </div>
+    </header>
+
+    <main class="flex-grow p-6 text-center">
+        <h2 class="text-2xl font-bold mb-6">ThingsFinder é uma ferramenta que usa sua webcam para identificar e reconhecer objetos em tempo real. <br>É fácil de usar e fornece resultados instantâneos.</h2>
+        <p id="loadingMessage" class="text-lg mb-6">
+            Aguarde enquanto nosso sistema carrega o modelo necessário. <br> processo pode levar alguns segundos.
+            </div>
+        <div id="loader" class="loader-container">
+            <div class="loader"></div>
+        </div>
+
+        <section id="demos" class="hidden">
+            <p class="text-lg">
+            <p class="text-xl">Modelo Carregado!</p><br>você pode iniciar a detecção de objetos em tempo real. Clique em
+            <strong>"Habilitar
+                Webcam"</strong> abaixo e aceite o acesso à webcam quando solicitado pelo navegador.
+            </p>
+            <div id="liveView" class="relative inline-block">
+                <button id="webcamButton"
+                    class="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Habilitar
+                    Webcam</button>
+                <video id="webcam" autoplay class="mt-4 border-4 border-blue-800 rounded-lg shadow-lg"></video>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-800 text-white text-center p-4">
+        <div class="flex flex-col items-center">
+            <p>&copy; 2024 - ThingsFinder</p>
+            <p class="mt-2">Desenvolvido por <a href="https://github.com/BrunoHoinacki/Smart-Object-Detector"
+                    class="text-yellow-300 hover:text-yellow-100">Bruno Hoinacki</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
